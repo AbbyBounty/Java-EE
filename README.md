@@ -1,17 +1,17 @@
 # Java-EE
 Web based java projects ,my regular practice codes
 ### Day 1
->Java EE Introduction
->Web Server 
->Application Server 
->Client Server Architecture 
->Web Basics 
->Hypertext Transfer Protocol [ HTTP ] 
->HTTP Request Methods 
->HTTP Response 
->HTTP Status Code 
->Content-Type / MIME Type 
->HTTP Flow 
+	>Java EE Introduction
+	>Web Server 
+	>Application Server 
+	>Client Server Architecture 
+	>Web Basics 
+	>Hypertext Transfer Protocol [ HTTP ] 
+	>HTTP Request Methods 
+	>HTTP Response 
+	>HTTP Status Code 
+	>Content-Type / MIME Type 
+	>HTTP Flow 
 
 ### Day 2
 >Servlet
