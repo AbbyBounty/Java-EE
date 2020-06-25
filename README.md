@@ -14,24 +14,24 @@ Web based java projects ,my regular practice codes
 	>HTTP Flow 
 
 ### Day 2
->Servlet
->Servlet compilation and execution from terminal 
->Deployment descriptor 
->Using Deployment Descriptor to map URLs to servlet
->Web Container
->Servlet Life Cycle Methods
->ServletRequest
->HttpServletRequest
->ServletResponse
->HttpServletResponse
->PrintWriter 
+	>Servlet
+	>Servlet compilation and execution from terminal 
+	>Deployment descriptor 
+	>Using Deployment Descriptor to map URLs to servlet
+	>Web Container
+	>Servlet Life Cycle Methods
+	>ServletRequest
+	>HttpServletRequest
+	>ServletResponse
+	>HttpServletResponse
+	>PrintWriter 
 
 
 ### Day 3
->Linking Html page to Servlet
->Servlet Life Cycle
->Servlet Hierarchy
->Html  Servlet integration 
+	>Linking Html page to Servlet
+	>Servlet Life Cycle
+	>Servlet Hierarchy
+	>Html  Servlet integration 
 
 
 ### Day 4
@@ -40,10 +40,11 @@ Web based java projects ,my regular practice codes
 >Servlet Hierarchy
 >Html  Servlet integration 
 
+### Day 5
 >Servlate Contex
 >State Management 
 
-
+### Day 6
 >Sate Management 
 	-Server side technicians 
 		-session
@@ -52,7 +53,7 @@ Web based java projects ,my regular practice codes
 	-Client pull
 	-Server pull
 
-
+### Day 7
 >Listener
 >Exception Handling 
 >auto-refresh/wait pages
@@ -63,10 +64,8 @@ Web based java projects ,my regular practice codes
 	1. Scriptlet 2. Expression 3. Declaration 
 >Directives
 	1. page 2. include 3. taglib 
-
-
-Day 8
-
+	
+### Day 8
 >Directive
 >Scope in JSP
 >JSP EL
@@ -77,16 +76,12 @@ Day 8
 	1. <jsp:useBean> 	2. <jsp:getProperty>
 	 3. <jsp:setProperty>
 	 4. <jsp:include> 	5. <jsp:forward>  
-   
-   
-   Day 9
 
+### Day 9
 >JSTL
 >JSP custom tags
 
-
-Day 10
-
+### Day 10
 >MVC
 >JUnit
 >Maven
