@@ -1,0 +1,87 @@
++ Servlet
+	- Servlet is a specification, created by Pavni Diwanji while she worked at Sun Microsystems.
+	- Servlet version history:
+		Servlet API Version		Platform
+		----------------------------------------
+			Servlet 1.0		Unspecified
+			Servlet 2.0		JDK 1.1
+			Servlet 2.1		Unspecified
+			Servlet 2.2		J2EE 1.2
+			Servlet 2.3		J2EE 1.3
+			Servlet 2.4		J2EE 1.4
+			Servlet 2.5		Java EE 5
+			Servlet 3.0		Java EE 6
+			Servlet 3.1		Java EE 7
+			Servlet 4.0		Java EE 8
+		----------------------------------------
+	- tomcat/lib contains "servlet-api.jar" file which contains implementation of Servlet specification.
+	- A servlet is a web component hosted in a servlet container and generates dynamic content.
+	- If we want to do servlet programming then we should import following packages:
+		1. javax.servlet
+		2. javax.servlet.http
+		3. java.io
+	- Types declared in javax.servlet package:
+		# Interface(s)
+			* Servlet
+			* ServletConfig
+			* ServletContext
+			* ServletRequest
+			* ServletResponse
+			* RequestDispatcher
+			* SingleThreadModel
+		# Class(es)
+			* GenericServlet
+		# Exception(s)
+			* ServletException
+	- Types declared in javax.servlet.http package:
+		# Interface(s)
+			* HttpServletRequest
+			* HttpServletResponse
+			* HttpSession
+		# Class(es)
+			* HttpServlet
+			* Cookie
+	- Concept of servlet is protocol independant.
+	- "javax.servlet.GenericServlet" is abstract class contains  protocol independant implementation of Servlet. It implements 3 		   interfaces:
+		1. javax.servlet.Servlet : <<interface>>
+			* This interface defines methods to initialize a  servlet, to service requests,
+			 and to remove a  servlet from the server. These are known as  life-cycle methods.
+
+			1 void init(ServletConfig config)throws SE
+			2 void service(ServletRequest req,
+	                   ServletResponse res)throws SE, IOE 
+			3 void destroy()
+		2. javax.servlet.ServletConfig : <<interface>>
+			* ServletConfig object is created by web container  for each servlet to pass information to a 				  servlet during initialization.
+			* This object can be used to get configuration  information from web.xml file.
+
+			1. ServletContext getServletContext()
+			2. String getInitParameter(String name)
+			3. Enumeration<String> getInitParameterNames()
+		3. java.io.Serializable : <<interface>>
+			* It is marker/tagging interface.
+
+	- Methods declared in "javax.servlet.GenericServlet" class:
+		Except service(req, resp) method, it has overriden all the methods of Servlet and ServletConfig hence it is abstract.
+		1. public void init( )throws ServletException
+		2. public void log(String msg)
+
+	- "javax.servlet.http.HttpServlet" is abstract class contains HTTP  protocol specific implementation of Servlet. it is a sub class 		   of "javax.servlet.GenericServlet" class.
+	- Methods declared in "javax.servlet.http.HttpServlet" class:
+		* The HttpServlet class has one doXXX method to handle 			  each of HTTP GET , POST , PUT , DELETE , HEAD ,OPTIONS , 			  and TRACE requests. e.g
+		1. protected void doGet(HttpServletRequest req,
+                     HttpServletResponse resp) throws SE, IOE
+		2. protected void doPost(HttpServletRequest req,
+                     HttpServletResponse resp) throws SE, IOE
+		3. protected void service(HttpServletRequest req,
+                     HttpServletResponse resp) throws SE, IOE
+
+	- Applet is a java class which runs in web browsers memory while 		  Servlet is a java class which runs in web servers memory.
+	- If we want to define servlet then we should extend it from 		  "javax.servlet.http.HttpServlet" class.	
+	- Job of servlet:
+		1. Request processing.
+		2. Taking care of business logic(B.L)
+		3. Taking care of page navigation
+		4. Generating dynamic response
+		5. Managing DAO.
+	- In case of MVC(Model-View-Controller) application, Servlet is   	    designed to use as a controller.

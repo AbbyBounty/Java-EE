@@ -1,0 +1,59 @@
++ Applet:
+	- It is a sub class of Panel class.
+	- It is a java class which is designed to run in Applet Viewer or 		  Web browser. 
+	- If we want to define Applet then we should extend it either from 		  Applet/JApplet class.
+	- java.applet.Applet add support for the AWT component 		  		  architecture.
+	- javax.swing.JApplet add support for the JFC/Swing component 	        architecture.
+	- The default layout manager of an applet is FlowLayout.
+	- Consider the following example:
+		package org.sunbeam.dac;
+		import java.applet.Applet;
+		import java.awt.Graphics;
+
+		public class FirstApplet extends Applet {
+			@Override public void init() {	}
+			
+			@Override public void start() {	}
+			
+			@Override public void paint(Graphics g) {
+				g.drawString("Hello Applet", 50,50);
+			}
+			
+			@Override public void stop() {	}
+			
+			@Override public void destroy() {  }
+		}
+	- As shown in above code, generally appley do not contain main 		  method rather it contains life cycle methods.
+
++ Applet's Execution Environment:
+	- A Java applet runs in the context/environment of a browser.
+	- The Java Plug-in software in the browser controls the launch and 		  execution of Java applets.
+	- The Java Plug-in software creates a worker thread for every Java 		  applet.It launches an applet in an instance of the Java Runtime 		  Environment (JRE) software. Normally, all applets run in the 		  same instance of the JRE.
+	- The Java Plug-in software starts a new instance of the JRE in 	  the following cases:
+		* When an applet requests to be executed in a specific 			  version of the JRE.
+		* When an applet specifies its own JRE startup parameters, 			  for example, the heap size.
+	- An applet will run in an existing JRE if the following 		  conditions are met:
+		* The JRE version required by the applet matches an 			  existing JRE.
+		* The JRE's startup parameters satisfy the applet's 			  requirements.
+
++ Applet Life Cycle:
+	- Applet class contains 4 callback methods for managing life cycle.
+	1. public void init() :
+		* Called by the browser or applet viewer to inform this 		  applet that it has been loaded into the system. 
+		* It is called once before the first time start method is 			  called. 
+	2. public void start():
+		* Called by the browser or applet viewer to inform this 		  applet that it should start its execution.
+		* It is called after the init method and each time the 			  applet is revisited in a Web page.
+	3. public void stop():
+		* Called by the browser or applet viewer to inform this 		  applet that it should stop its execution.	
+		* It is called when the Web page that contains this applet 			  has been replaced by another page, and also just before 			  the applet is to be destroyed. 
+	4. public void destroy():
+		* Called by the browser or applet viewer to inform this 		  applet that it is being reclaimed and that it should 			  destroy any resources that it has allocated.
+		*  The stop method will always be called before destroy. 
+
++ Applet in HTML:
+	- If we want to run applet in html file then we should use applet 		  tag.
+	- Syntax:
+		<applet code="" width="" height=""></applet>
+	- Now <applet> tag has been deprecated. Going forward, we should 	   use the <embed> or <object> tags.
+

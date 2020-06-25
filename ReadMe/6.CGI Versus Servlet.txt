@@ -1,0 +1,38 @@
+- File Name : "Index.html"
+	<html>
+		<body>
+			The current time is 09:15:20 pm
+		</body>
+	</html>
+- "Index.html" is a static web page.
+- A static page just sits there in a directory. The server finds it      and hands it back to the client as it is. Every client sees same thing.
+- Web server loves serving static web pages.
+- Two things web server alone won't do:
+	* Web server can serve only static pages. To generate Just-in-time 		  i.e dynamic web pages, web server need to rely on seperate 		  helper application.
+	* When we submit form data then web server do not save it rather 		  to save it in a file or database, it hand over to helper app.
++ CGI:
+	- The non java term for web server helper application is "CGI" 		  program.
+	- CGI stands for Commonn Gateway Interface.
+	- It is a standard interface/protocol for interfacing external 		  application software with a web server.
+	- It has been widely used for implementing dynamic generated pages.
+	- Most CGI programs are written in perl scripts but we can write 		  it in C, Python or PHP also.
+	- How CGI generate dynamic content?
+		* User clicks a link that has URL to a CGI program instead 			  of static page.
+		* Web server sees that request is for a helper program, so 			  the web server launches and runs the program. The web 		  server sends along any parameter from a GET or POST.
+		* The helper app constructs brand new ( static ) page and 			  sends the HTML back to the server.
+		* The helper application is shut down and client gets 			  dynamic HTML page.		
+	- Advantage(s)
+		1. CGI programs are language independant.
+		2. It has very simple interface. Special library is not 		   reqired to generate CGI program.
+	- Disadvantage(s)
+		1. CGI programs are slow since they need to fork a new 			   process for every http request and database connection 			   must be reopened for next instance of program, which is 			   quite costly.
+
+
+
+The advantages of using servlets are their fast performance and ease of use combined with more power over traditional CGI (Common Gateway Interface). Traditional CGI scripts written in Java have a number of performance disadvantages:
+
+    When an HTTP request is made, a new process is created each time the CGI script is called. The overhead associated with process creation can dominate the workload especially when the script does relatively fast operations. Thus, process creation will take more time for CGI script execution. In contrast, for servlets, each request is handled by a separate Java thread within the web server process, thereby avoiding the overhead associated with forking processes within the HTTP daemon.
+    Simultaneous CGI requests will load the CGI script to be copied into memory once per request. With servlets, there is only one copy that persists across requests and is shared between threads.
+    Only a single instance answers all requests concurrently. This reduces memory usage and eases the management of persistent data.
+    A servlet can be run by a servlet container in a restrictive environment, called a sandbox. This is similar to an applet that runs in the sandbox of the web browser. This enables restricted use of potentially harmful servlets.[3] CGI programs can of course also sandbox themselves, since they are simply OS processes.
+

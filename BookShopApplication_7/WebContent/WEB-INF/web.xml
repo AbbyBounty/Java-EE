@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+ 	<context-param>
+ 		<param-name>DRIVER</param-name>
+		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+ 	</context-param>
+ 	<context-param>
+ 		<param-name>URL</param-name>
+ 		<param-value>jdbc:mysql://localhost:3306/jee_online_db</param-value>
+ 	</context-param>
+ 	<context-param>
+ 		<param-name>USER</param-name>
+ 		<param-value>sandeep</param-value>
+ 	</context-param>
+ 	<context-param>
+ 		<param-name>PASSWORD</param-name>
+ 		<param-value>sandeep</param-value>
+ 	</context-param>
+ 	
+ 	<servlet>
+ 		<servlet-name>RegistrationServlet</servlet-name>
+ 		<servlet-class>pages.RegistrationServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>RegistrationServlet</servlet-name>
+ 		<url-pattern>/register</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>ValidateServlet</servlet-name>
+ 		<servlet-class>pages.ValidateServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>ValidateServlet</servlet-name>
+ 		<url-pattern>/validate</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>SubjectServlet</servlet-name>
+ 		<servlet-class>pages.SubjectServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>SubjectServlet</servlet-name>
+ 		<url-pattern>/subject</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>BookServlet</servlet-name>
+ 		<servlet-class>pages.BookServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>BookServlet</servlet-name>
+ 		<url-pattern>/book</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>AddToServlet</servlet-name>
+ 		<servlet-class>pages.AddToServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>AddToServlet</servlet-name>
+ 		<url-pattern>/cart</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>ShowCartServlet</servlet-name>
+ 		<servlet-class>pages.ShowCartServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>ShowCartServlet</servlet-name>
+ 		<url-pattern>/showcart</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet>
+ 		<servlet-name>LogoutServlet</servlet-name>
+ 		<servlet-class>pages.LogoutServlet</servlet-class>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>LogoutServlet</servlet-name>
+ 		<url-pattern>/logout</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<error-page>
+ 		<error-code>404</error-code>
+ 		<location>/error</location>
+ 	</error-page>
+ 	
+ 	<error-page>
+ 		<exception-type>javax.servlet.ServletException</exception-type>
+ 		<location>/error</location>
+ 	</error-page>
+ 	
+ 	<listener>
+ 		<listener-class>listener.BookShopListener</listener-class>
+ 	</listener>
+</web-app>

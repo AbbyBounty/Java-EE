@@ -1,0 +1,78 @@
++ What is Java EE?
+	- Java EE / JEE is also called as Enterprise Java / Advanced Java.
+	- Java EE is a specification defined by Sun/Oracle. It is super set of Java SE.
+	- It is a collection of interfaces and abstract classes.
+	- Current version of Java EE is 8.
+	- Anbody can implement Java EE specification but generally web server and application server vendors implement it.
+	- Following are the Java EE Specifications:
+		1. Servlet
+		2. WebSocket
+		3. JSP( Java Server Pages )
+		4. JSF( Java Server Faces )
+		5. EJB( Enterprise Java Bean )
+		6. JPA( Java Persistence API )
+		7. JTA( Java Transaction API )
+		8. JMS( Java Message Service )
+ 
++ Web Server:
+	- Dedicated server software which processes incoming network requests over the HTTP protocol.
+	- It is responsible for taking care of presentation logic. In  other words,
+	 it is designed to serve HTTP content.
+	- Web Server = Web Container + Extra Services
+		* Web Container = Servlet container + JSP Container
+		* Extra Services = Security,Connection pooling,JNDI etc	
+	- Example of web server:
+		1. Tomcat( Apache Foundation )
+		2. Jetty(  Eclipse Foundation )
+		3. Resin( Caucho Technology )
+		4. LiteSpeed Web Server( LiteSpeed Technologies )
+		5. Mongoose( Cesanta Software  )
+
++ Application Server:
+	- Dedicated server software which processes incoming network requests over the HTTP, RMI/RPC etc. protocol.
+	- It is responsible for taking care of presentation logic as well as business logic.
+	- App server = Web Container + EJB Container + Extra services
+		* Extra Services:
+			1. Connection Pooling
+			2. Object Pooling
+			3. Transaction Support
+			4. Messaging Services etc.
+	- Example of Application server:
+		1. TomEE( Apache Foundation ). TomEE = Tomcat + Java EE.
+		2. Geronimo( Apache Foundation )
+		3. GlassFish( Oracle )
+		4. WebLogic( Oracle )
+		5. WebSphere( IBM )
+		6. WildFly-Formerly JBoss( Red Hat )
+		7. Enhydra( Lutris  Technologies )
++ Which are the types of container?
+	- The Java EE specification lists 4 types of containers:
+	    1. Applet Container	  
+		* Manages the execution of applets.
+		* Consists of a web browser and a Java Plug-in running on 			  the client together.
+	    2. Application Client Container
+		* Manages the execution of application client components. 
+		* Application clients and their container run on the client.
+	    3. Web Container
+		* Manages the execution of web pages, servlets, and some  EJB components for Java EE applications.
+		* Web components and their container run on the Java EE 		  server.
+	    4. EJB Container
+		* Manages the execution of enterprise beans for Java EE  applications. 
+		* Enterprise beans and their container run on the Java EE 			  server.
+
++ Why Java EE?
+	1. It supports different types of clients:
+		- Thin client	-> Web browser
+		- Thick client	-> desktop application
+		- Smart client  -> mobile application
+
+	2. It gives us JEE server independence:
+		We can develop and deploy server side application on any JEE compliant server which guaranteed to produce same 			results without touching or re-deploying on any other JEE 			server.
+
+	3. Ready made implementation of primary services:
+		For example:
+			- security
+			- connection pooling
+			- email
+		Java EE developer doesnt have to worry about primary services.
+	     He/she can concentrate on actual business logic.

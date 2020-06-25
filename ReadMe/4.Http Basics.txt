@@ -1,0 +1,121 @@
++ Internet:
+	- It is a massive distributed client/server information system.
++ URL:
+	- Uniform Resource Locator
+	- It is used to uniquely identify a resource over the web.
+	- URL has the following syntax:
+		"protocol://hostname:port/path-and-file-name"	
+	- There are 4 parts in a URL:
+		Protocol: The application-level protocol used by the 			client and server, e.g. HTTP, FTP, and telnet.
+		
+		Hostname: The DNS domain name or IP address (192.128.1.2) 			of the server.
+		
+		Port: The TCP port number that the server is listening for 			incoming requests from the clients.
+		
+		Path-and-file-name: The name and location of the requested 			resource, under the server document base directory.
+
++ HTTP:
+	- Hypertext Transfer Protocol
+	- It is most popular application protocol used in the Internet.
+	- It typically runs over a TCP/IP connection.	
+	- HTTP is a stateless protocol. In other words, the current 		  request does not know what has been done in the previous 		  requests.
+	- HTTP permits negotiating of data type and representation, so as 		  to allow systems to be built independently of the data being 		  transferred.
+	- It is a generic, stateless, protocol which can be used for many 		  tasks beyond its use for hypertext, such as name servers and 		  distributed object management systems, through extension of its 		  request methods, error codes and headers.
+	
++ HTTP Request Methods:
+	- HTTP protocol defines a set of request methods. A client can use 		  one of these request methods to send a request message to an 		  HTTP server.
+	- The methods are:		
+		1. GET: A client can use the GET request to get a web 			   resource from the server.
+		2. POST: Used to post data up to the web server.
+		3. PUT: Ask the server to store the data.
+		4. DELETE: Ask the server to delete the data.
+		5. HEAD: A client can use the HEAD request to get the 			   header that a GET request would have obtained. Since 		   the header contains the last-modified date of the data, 			   this can be used to check against the local cache copy.
+		6. TRACE: Ask the server to return a diagnostic trace of 			   the actions it takes.
+		7. OPTIONS: Ask the server to return the list of request 			   methods it supports.
+		8. CONNECT: Used to tell a proxy to make a connection to 			   another host and simply reply the content, without 			   attempting to parse or cache it. This is often used to 			   make SSL connection through the proxy.
+
+
++ Http Request Message
+	- HTTP client and server communicate by sending text messages. The 		  client sends a request message to the server.
+	- An HTTP request message consists of a req message header and an 		  optional req message body, separated by a blank line
+	- Request Message Header has
+		* Status Line:	
+			# syntax : req-method-name req-URI HTTP-ver
+			# req method : GET, POST, PUT etc
+			# req URI : : specifies the resource requested.
+			# HTTP Version : Http version currently used
+			# e.g GET /test.html HTTP/1.1
+		* Request Header:
+			# The request headers are in the form of 				  name:value pairs. 
+			# Multiple values, separated by commas.
+			# For Example
+				Host: www.xyz.com
+				Connection: Keep-Alive
+				Accept: image/gif, image/jpeg, */*
+				Accept-Language: us-en, fr, cn
+				Cookie: cookie-name-1=cookie-value-1
+
++ Http Response Message:
+	-  HTTP client and server communicate by sending text messages.
+ 	   The client sends a request message to the server. The server, 		   in turn, returns a response message.	
+	-  An HTTP response message consists of a response message header 		   and an optional response message body, separated by a blank line
+	-  Response Message Header has
+		* Status Line:	
+			# syntax:HTTP-version status-code reason-phrase
+			# HTTP-version: The HTTP version used in this 				  session.
+			# status-code: a 3-digit number.
+			# reason-phrase: gives a short explanation to the 	 			  status code.
+			#  Common status code and reason phrase are "200 				   OK", "404 Not Found", "403 Forbidden", "500 				   Internal Server Error".
+		* Response Header:
+			# The response headers are in the form 
+			  name:value pairs
+			# Examples of response headers are:
+				Content-Type: text/html
+				Content-Length: 35
+				Connection: Keep-Alive
+				Keep-Alive: timeout=15, max=100
+	- The response message body contains the resource data requested.
+
++ HTTP Status Code:
+	- The status code is a 3-digit number:
+		1xx (Informational): Request received, server is 			continuing the process.
+
+		2xx (Success): The request was successfully received, 			understood, accepted and serviced.
+
+		3xx (Redirection): Further action must be taken in order 			to complete the request.
+
+		4xx (Client Error): The request contains bad syntax or 			cannot be understood.
+
+		5xx (Server Error): The server failed to fulfill an 			apparently valid request
+
+	- Some commonly encountered status codes are:
+		* 200 OK: The request is fulfilled.
+		* 301 Move Permanently: The resource requested for has 			  been permanently moved to a new location.
+		* 404 Not Found: The requested resource cannot be found in 			  the server.
+		* 500 Internal Server Error: Server is confused, often 			  caused by an error in the server-side program responding 			  to the request.
+
++ Content Type / MIME Type:
+	- The Multipurpose Internet Mail Extensions (MIME) type is a 		  standardized way to indicate the nature and format of a document.
+	- Browsers often use the MIME type (and not the file extension) to 		  determine how it will process a document; it is therefore 		  important that servers are set up correctly to attach the 		  correct MIME type to the header of the response object.
+	- Syntax:	type/subtype
+	- A MIME type is case-insensitive but traditionally it is written 		  all in lower case.	
+		text - Represents any document that contains text.
+		text/plain, text/html, text/css, text/javascript	
+
+		image - Represents any kind of images.
+		image/gif, image/png, image/jpeg, image/bmp, image/webp
+
+		audio - Represents any kind of audio files.
+		audio/midi, audio/mpeg, audio/webm, audio/ogg, audio/wav
+		
+		video - Represents any kind of video files.
+		video/webm, video/ogg
+
+		application - Represents any kind of binary data.
+		application/octet-stream, application/pkcs12,	 			application/vnd.mspowerpoint, application/xhtml+xml, 			application/xml, application/pdf
+
++ Browser:
+	- It is also called as web client/http client/ thin client.
+	- e.g Mozila Firefox, Google Chrome etc.
+	- Whenever we issue a URL from the browser to get a web resource 		  using HTTP, the browser turns the URL into a request message and 		  sends it to the HTTP server.
+	- The HTTP server interprets the request message, and returns us 		  an appropriate response message, which is either the resource we 		  requested or an error message.

@@ -1,0 +1,107 @@
++ Apache Tomcat
+	- It is often reffered as Tomcat Server.
+	- It is developed by Apache Software Foundation.
+	- It implements several Java EE specifications including:
+		* Java Servlet
+		* JavaServer Pages(JSP)
+		* Java EL
+		* WebSocket,
+
+
++ Tomcat Version History
+	-----------------------------------------------
+	Version	Year	Supporing Technology
+	-----------------------------------------------
+	2.0	1998	--
+	3.0	1999	Servlet 2.2, and JSP 1.1
+	4.1	2002	Servlet 2.3 and JSP 1.2
+	5.0	2003	Servlet 2.4, JSP 2.0 and EL 1.1
+	5.5	2004	--
+	6.0	2007	Servlet 2.5, JSP 2.1 and EL 2.1 
+	7.0	2011	Servlet 3.0, JSP 2.2 and EL 2.2
+	8.0	2014	Servlet 3.1, JSP 2.3 and EL 3.0
+	8.5	2016	HTTP/2
+	9.0	2018	Servlet 4.0, JSP 2.4 and EL 3.1
+	-----------------------------------------------	
+
++ Components of Tomcat Server.	
+	- Catalina:
+		Servlet container/engine for Apache Tomcat
+	- Jasper:
+		JSP container/engine for Apache Tomcat
+	- Coyote:
+		It is a Connector component for Tomcat. It listens for 			incoming connections to the server on a specific TCP port 			and forwards the request to the Tomcat Engine to process 			the request and send back a response to the requesting 			client. 
+
++ Installation directory of Apache tomcat
+	- bin:
+		 - Contains Start/Stop scripts for tomcat for both windows  and linux operating system.
+	- conf:
+		- Contains main configuration files (web.xml and server.xml) to configure tomcat server.
+	- lib:
+		- It contains java archive( .jar ) files needed by Tomcat to run the application.
+		 These jar file contains  implementation of Java EE specification.
+		It is shared  among all the web applications.
+	- logs:
+		- This is where Tomcat places its log files by default.
+	- temp:
+		- It contains temporary files.
+
+	- webapps:
+		* This directory is called "Hot Deployment" directoy.
+		 Without stopping server, we can deploy java web  application here.
+		Any .war file placed here will be  automatically expanded.
+		* If we want to deploy JEE application here then either we  should create and 
+		copy .war file or we should 		  create JEE compliant directory structure here.
+		* JEE compliant directory structure:
+			+ Web Application
+				|- .html, .jsp, .css, image files
+				|- WEB-INF
+					|- web.xml
+					|- src( optional )
+					|   |- .java files
+					|- classes
+					|   |- .class files
+					|- lib
+					    |- external .jar files
+	
+	- work:
+		- Tomcat places intermediate file(such as compiled jsp 	files) during its work.
+		 If we delete this directory  while tomcat is running then we will not be able to  execute jsp pages.
+
+
++ Connector and default port.
+	Http			8080
+
+	Https			8443
+
+	Ajp12Connector		8007
+
+	Ajp13Connector		8009
+
++ Steps to configure and run tomcat without IDE.
+	1. Extract tomcat archive.
+
+	2. Launch "Tomcat server" from <tomcat>/bin => ./catalina.sh run 
+
+	3. Run web browser using URL : http://localhost:8080
+	   It should display welcome page.
+
+
++ Command to start and stop tomcat server:
+	1. /home/sandeep/apache-tomcat-8.5.29/bin#./catalina.sh run
+	2. /home/sandeep/apache-tomcat-8.5.29/bin#./shutdown.sh
+
+
++ Steps to enable manager login:
+	1. Edit <tomcat>/conf/tomcat-users.xml  as follows
+	
+		<tomcat-users>
+			<role rolename="manager-gui"/>
+			<user	username="root"
+				password="manager"
+				roles="manager-gui"/>
+		</tomcat-users>
+	2. Launch "Tomcat server".
+	3. Hit the URL : http://localhost:8080
+	4. Click on Manager App and Check Manager console for deployed web 		   applications.
+

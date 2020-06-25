@@ -1,0 +1,74 @@
++ Steps to compile and execute servlet from terminal.
+	1. create JEE complaint directory structure in tomcat/webapps
+		TestWebApp
+			|- WEB-INF
+				|- web.xml
+				|- src		--> HelloServlet.java
+				|- classes  	
+				|- lib	
+
+	2. Define and save HelloServlet class in WEB-INF/src as follows:
+	
+		package pages;
+
+		import java.io.*;
+		import javax.servlet.*;
+		import javax.servlet.annotation.*;
+
+
+		import javax.servlet.http.*;
+		import java.util.Date;
+
+		//@WebServlet("/hello")
+		//@WebServlet(urlPatterns="/hello")
+		public class HelloServlet extends HttpServlet {			
+			protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+			{		
+				response.setContentType("text/html");
+				try( PrintWriter out = response.getWriter( ) )
+				{
+					out.println("<html>");
+					out.println("<head>");
+					out.println("<title>Hello Servlet</title>");
+					out.println("</head>");
+					out.println("<body>");
+					out.println("<h3>Hello Servlet : "+new Date()+" : "+Thread.currentThread().toString()+"</h3>");
+					out.println("</body>");
+					out.println("</html>");
+				}
+			}
+		}
+
+	3. Configure servlet using either @WebServlet annotation or using
+	   web.xml file as follows:
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<web-app xmlns:xsi="" version="3.1">
+			<servlet>
+				<servlet-name>HelloServlet</servlet-name>
+				<servlet-class>pages.HelloServlet</servlet-class>
+			</servlet>
+			<servlet-mapping>
+				<servlet-name>HelloServlet</servlet-name>
+				<url-pattern>/hello</url-pattern>
+			</servlet-mapping>
+		</web-app>
+
+	4. To compile servlet from WEB-INF directory, Set classpath of
+	   "servlet-api.jar":	
+		export CLASSPATH=/home/sandeep/apache-tomcat-8.5.29/lib/servlet-api.jar
+	5. Compile servlet and save .class file inside WEB-INF/classes
+	   directory.
+		javac -d ./classes/ ./src/HelloServlet.java
+
+	6. Start external tomcat server:
+		./catalina.sh run		
+
+	7. Open web browser and make request using URL:
+		Protocol://HostName:Port/WebApplicationName/URLPattern
+
+		e.g http://localhost:8080/TestWebApp/hello	
+
+
+
+
