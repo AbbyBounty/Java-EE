@@ -1,5 +1,5 @@
 # Java-EE
-Web based java projects ,my regular practice codes
+	Web based java projects ,my regular practice codes
 ### Day 1
 	>Java EE Introduction
 	>Web Server 
@@ -35,53 +35,53 @@ Web based java projects ,my regular practice codes
 
 
 ### Day 4
->Linking Html page to Servlet
->Servlet Life Cycle
->Servlet Hierarchy
->Html  Servlet integration 
+	>Linking Html page to Servlet
+	>Servlet Life Cycle
+	>Servlet Hierarchy
+	>Html  Servlet integration 
 
 ### Day 5
->Servlate Contex
->State Management 
+	>Servlate Contex
+	>State Management 
 
 ### Day 6
->Sate Management 
-	-Server side technicians 
-		-session
-		-Application
->Page Navigation
-	-Client pull
-	-Server pull
+	>Sate Management 
+		-Server side technicians 
+			-session
+			-Application
+	>Page Navigation
+		-Client pull
+		-Server pull
 
 ### Day 7
->Listener
->Exception Handling 
->auto-refresh/wait pages
->JSP
->JSP life Cycle
->JSP implicit Objects(9)
->Scripting Element
-	1. Scriptlet 2. Expression 3. Declaration 
->Directives
-	1. page 2. include 3. taglib 
+	>Listener
+	>Exception Handling 
+	>auto-refresh/wait pages
+	>JSP
+	>JSP life Cycle
+	>JSP implicit Objects(9)
+	>Scripting Element
+		1. Scriptlet 2. Expression 3. Declaration 
+	>Directives
+		1. page 2. include 3. taglib 
 	
 ### Day 8
->Directive
->Scope in JSP
->JSP EL
->The EL implicate Object(11)
->JAVA Beans 
->Layers
->JSP Actions
-	1. <jsp:useBean> 	2. <jsp:getProperty>
-	 3. <jsp:setProperty>
-	 4. <jsp:include> 	5. <jsp:forward>  
+	>Directive
+	>Scope in JSP
+	>JSP EL
+	>The EL implicate Object(11)
+	>JAVA Beans 
+	>Layers
+	>JSP Actions
+		1. <jsp:useBean> 	2. <jsp:getProperty>
+		 3. <jsp:setProperty>
+		 4. <jsp:include> 	5. <jsp:forward>  
 
 ### Day 9
->JSTL
->JSP custom tags
+	>JSTL
+	>JSP custom tags
 
 ### Day 10
->MVC
->JUnit
->Maven
+	>MVC
+	>JUnit
+	>Maven
